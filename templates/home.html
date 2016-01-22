@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <title>Quick Scrape | Home</title>
+</head>
+<body>
+    <div class="container" style="margin: 10%";>
+
+        <div>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="alert alert-{{ msgType }}" role="alert">
+                        {% for category, message in messages %}
+                            <span class="{{ category }}">{{ message }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+        </div>
+
+        <form action="/" method="post">
+            <div class="page-header">
+                <h1>Search for keyword in a web page<small> it's like magic</small></h1>
+            </div>
+            <div style="float: left;">
+                <input name="page" placeholder="Enter web site" style="margin-bottom: 4px;">
+                <input name="keyword" placeholder="Enter a keyword" style="border-color: darkgreen;"><br>
+                <input name="page" placeholder="Enter web site" style="margin-bottom: 4px"><br>
+                <input name="page" placeholder="Enter web site" style="margin-bottom: 4px;"><br>
+                <input name="page" placeholder="Enter web site" style="margin-bottom: 4px;"><br>
+                <input name="page" placeholder="Enter web site" style="margin-bottom: 4px;"><br>
+                <input name="page" placeholder="Enter web site" style="margin-bottom: 4px;"><br>
+                <input name="page" placeholder="Enter web site" style="margin-bottom: 4px;">
+            </div>
+
+            <button class="btn btn-default" style="margin-left: 20px;">Scrape it</button>
+        </form>
+
+    </div>
+</body>
+</html>
