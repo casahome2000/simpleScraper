@@ -14,8 +14,6 @@ def keyword_search(page, keyword):
         return msg, category
 
 
-# print(keyword_search("https://www.airbnb.com/about/about-us", 'villa'))
-
 
 #TODO: need to write out to CSV file
 #TODO: migrate to asyncio for speed - http://compiletoi.net/fast-scraping-in-python-with-asyncio.html
