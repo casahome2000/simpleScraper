@@ -3,8 +3,9 @@ import requests
 def keyword_search(page, keyword):
     pagetext = requests.get(page).text
 
-    if keyword in pagetext:
-        msg = 'Page: %s has the keyword: %s in it.' % (page, keyword)
+    count = pagetext.count(keyword)
+    if count > 0:
+        msg = 'Page: %s has the keyword: %s ( %s times )' % (page, keyword, str(count))
         category = 'success'
         return msg, category
     else:
